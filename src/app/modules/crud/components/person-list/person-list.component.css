@@ -1,0 +1,20 @@
+table {
+    border: 1px solid #000000;
+}
+
+th, td {
+    border-top: 1px solid #000000;
+    padding: 5px 30px;
+}
+
+.btn-add {
+    padding: 5px 15px;
+    border: none;
+    background-color: #23ae00;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.btn-add:hover {
+    background-color: #1e9501;
+}

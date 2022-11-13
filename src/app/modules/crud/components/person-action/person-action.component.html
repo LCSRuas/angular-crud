@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <h2>{{ action }} Pessoa</h2>
+        </div>
+    </div>
+
+    <form class="text-center" [formGroup]="personForm">
+        <div class="row mt-4">
+            <div class="col-md col-sm-12">
+                <label>Nome <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="nomePerson" class="form-control" />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['nomePerson'].hasError('required') && personForm.controls['nomePerson'].touched">Insira
+                    um nome</label>
+            </div>
+            <div class="col-md col-sm-12">
+                <label>Sobrenome <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="sobrenomePerson" class="form-control" />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['sobrenomePerson'].hasError('required') && personForm.controls['sobrenomePerson'].touched">Insira
+                    um sobrenome</label>
+            </div>
+            <div class="col-md col-sm-12">
+                <label>Nacionalidade <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="nacionalidadePerson" class="form-control" />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['nacionalidadePerson'].hasError('required') && personForm.controls['nacionalidadePerson'].touched">Insira
+                    uma nacionalidade</label>
+            </div>
+            <div class="col-md col-sm-12">
+                <label>E-Mail <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="emailPerson" class="form-control" />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['emailPerson'].hasError('required') && personForm.controls['emailPerson'].touched">Insira
+                    um e-mail</label>
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['emailPerson'].hasError('email') && personForm.controls['emailPerson'].touched">Insira
+                    um e-mail valido</label>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <label>Telefone <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="telefonePerson" class="form-control" mask="(00) 00000-0000" />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['telefonePerson'].hasError('required') && personForm.controls['telefonePerson'].touched">Insira
+                    um telefone</label>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-2 col-sm-12">
+                <label>CEP <span class="lbl-obrigatorio">*</span></label>
+                <input (blur)="getEndereco()" formControlName="cepPerson" class="form-control" mask="00000-000" />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['cepPerson'].hasError('required') && personForm.controls['cepPerson'].touched">Insira
+                    um CEP</label>
+            </div>
+            <div class="col-md col-sm-12">
+                <label>Estado <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="estadoPerson" class="form-control" readonly />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['estadoPerson'].hasError('required') && personForm.controls['estadoPerson'].touched">Insira
+                    um CEP</label>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <label>Cidade <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="cidadePerson" class="form-control" readonly />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['cidadePerson'].hasError('required') && personForm.controls['cidadePerson'].touched">Insira
+                    um CEP</label>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <label>Logradouro <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="logradouroPerson" class="form-control" readonly />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['logradouroPerson'].hasError('required') && personForm.controls['logradouroPerson'].touched">Insira
+                    um CEP</label>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <label>Número <span class="lbl-obrigatorio">*</span></label>
+                <input formControlName="numeroPerson" class="form-control" />
+                <label class="lbl-erro"
+                    *ngIf="personForm.controls['numeroPerson'].hasError('required') && personForm.controls['numeroPerson'].touched">Insira
+                    um Número</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button (click)="saveForm()" [disabled]="!personForm.valid" class="btn-salvar mt-3">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

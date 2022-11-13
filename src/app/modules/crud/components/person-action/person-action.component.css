@@ -1,0 +1,22 @@
+.btn-salvar {
+    width: 100%;
+    padding: 5px 15px;
+    border: none;
+    background-color: #23ae00;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.btn-salvar:hover {
+    background-color: #1e9501;
+}
+
+.lbl-obrigatorio {
+    color: #bd0202;
+    font-weight: 600;
+}
+
+.lbl-erro {
+    color: #bd0202;
+    font-size: 14px;
+}

@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row text-center mt-3">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            <h2>CRUD Exemplo - Pessoa</h2>
+        </div>
+        <div class="col">
+            <button class="btn-add" routerLink="action">Adicionar</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <table class="m-auto">
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Nacionalidade</th>
+                <th>CEP</th>
+                <th>Endereço</th>
+                <th>E-Mail</th>
+                <th>Telefone</th>
+                <td>Editar</td>
+                <td>Remover</td>
+            </tr>
+            <tr *ngFor="let oP of objPerson">
+                <td># {{ oP.id }}</td>
+                <td>{{ oP.nome }} {{ oP.sobrenome }}</td>
+                <td>{{ oP.nacionalidade }}</td>
+                <td>{{ oP.cep | mask: '00000-000' }}</td>
+                <td>{{ oP.logradouro }} {{ oP.numero }} ({{ oP.estado }} - {{ oP.cidade }})</td>
+                <td>{{ oP.email }}</td>
+                <td>{{ oP.telefone | mask: '(00) 00000-0000' }}</td>
+                <td>
+                    <img routerLink="action/{{ oP.id }}" style="cursor: pointer;" src="../../../../../assets/icons/editar.png" width="20px" height="auto" alt="Editar" />
+                </td>
+                <td>
+                    <img (click)="deletePerson(oP.id)" style="cursor: pointer;" src="../../../../../assets/icons/remover.png" width="20px" height="auto" alt="Remover" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
